@@ -10,7 +10,7 @@ paper = 2
 scissors = 3
 
 # These ar the initial rules of the game
-names = {rock: "Rock", paper: "paper", scissors: "Scissors"}
+names = {rock: "Rock", paper: "Paper", scissors: "Scissors"}
 rules = {rock: scissors, paper: rock, scissors: paper}
 
 player_score = 0
@@ -18,7 +18,7 @@ computer_score = 0
 
 # Defining the start function
 def start():
-    print("Let's play a game ofrock, paper, scissors")
+    print("Let's play a game of rock, paper, scissors")
     while game():
         pass
     scores()
