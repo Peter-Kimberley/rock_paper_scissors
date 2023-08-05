@@ -10,7 +10,7 @@ paper = 2
 scissors = 3
 
 # These ar the initial rules of the game
-names = {rock: "Rock", paper: "Paper", scissors: "Scissors"}
+names = {rock: "Rock", paper: "paper", scissors: "Scissors"}
 rules = {rock: scissors, paper: rock, scissors: paper}
 
 player_score = 0
@@ -18,7 +18,7 @@ computer_score = 0
 
 # Defining the start function
 def start():
-    print("Let's play a game of rock, paper, scissors")
+    print("Let's play a game ofrock, paper, scissors")
     while game():
         pass
     scores()
@@ -42,3 +42,24 @@ def move():
         except ValueError:
             pass
         print("Oops! I didn't understand that. Please enter 1, 2, or 3.")
+
+
+def result(player, computer):
+    print("1...")
+    time.sleep(1)
+    print("2...")
+    time.sleep(1)
+    print("3...")
+    time.sleep(0.5)
+    print("The computer threw (0)!".format(names[computer]))
+    global player_score, computer_score
+    if player == computer:
+        print("Tie game.")
+    else:
+        if rules[player] == computer:
+            print("Your victory has been assured.")
+            player_score += 1
+        else:
+            print("The computer laugh as you realise you have been defeated.")
+            computer_score += 1
+
