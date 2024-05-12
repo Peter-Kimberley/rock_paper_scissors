@@ -27,14 +27,14 @@ def start():
 def game():
     player = move()
     computer = random.randint(1, 3)
-    result (playe, computer)
+    result (player, computer)
     return play_again()
 
 # Defining the move function
 def move():
     while True:
         print()
-        player = raw_input("Rock = 1\nPaper = 2\nScissors =3\nMake a move: " )
+        player = input("Rock = 1\nPaper = 2\nScissors =3\nMake a move: " )
         try:
             player = int(player)
             if player in (1,2,3):
@@ -51,7 +51,7 @@ def result(player, computer):
     time.sleep(1)
     print("3...")
     time.sleep(0.5)
-    print("The computer threw (0)!".format(names[computer]))
+    print("The computer threw {0}!".format(names[computer]))
     global player_score, computer_score
     if player == computer:
         print("Tie game.")
@@ -60,6 +60,18 @@ def result(player, computer):
             print("Your victory has been assured.")
             player_score += 1
         else:
-            print("The computer laugh as you realise you have been defeated.")
+            print("The computer laughs, as you realise you have been defeated.")
             computer_score += 1
-
+def play_again():
+    answer = input("Would you like to play again? y/n: ")
+    if answer in ("y", "Y", "yes", "Yes", "Of course !" ):
+        return answer
+    else:
+        print("Thank you for playing my game. See you next time")
+def scores():
+    global player_score, computer_score
+    print("HIGH SCORES")
+    print("Player: ", player_score)
+    print("Computer: ", computer_score)
+if __name__ == '__main__':
+    start()
