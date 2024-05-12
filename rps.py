@@ -75,3 +75,7 @@ def scores():
     print("Computer: ", computer_score)
 if __name__ == '__main__':
     start()
+
+
+# This is my first program written from a coding magazine
+ 
